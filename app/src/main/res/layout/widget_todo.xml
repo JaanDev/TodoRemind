@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@drawable/widget_bg"
+    android:padding="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingStart="8dp" android:paddingEnd="4dp"
+        android:paddingTop="4dp" android:paddingBottom="2dp">
+
+        <LinearLayout
+            android:id="@+id/widget_title_wrap"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/widget_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/widget_title"
+                android:textColor="@color/widget_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView android:id="@+id/widget_date"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/widget_text_secondary"
+                android:textSize="10sp"
+                android:maxLines="1" android:ellipsize="end" />
+        </LinearLayout>
+
+        <ImageButton android:id="@+id/widget_btn_toggle_done"
+            android:layout_width="30dp" android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_eye" android:scaleType="centerInside"
+            android:contentDescription="@string/w_toggle_done" />
+
+        <ImageButton android:id="@+id/widget_btn_refresh"
+            android:layout_width="30dp" android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_refresh" android:scaleType="centerInside"
+            android:contentDescription="@string/w_refresh" />
+
+        <ImageButton android:id="@+id/widget_btn_add"
+            android:layout_width="30dp" android:layout_height="30dp"
+            android:background="@drawable/widget_circle_accent"
+            android:src="@drawable/ic_add" android:scaleType="centerInside"
+            android:contentDescription="@string/w_add" />
+    </LinearLayout>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+
+        <ListView android:id="@+id/widget_list"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:divider="@android:color/transparent" android:dividerHeight="3dp"
+            android:paddingStart="2dp" android:paddingEnd="2dp" android:paddingBottom="2dp"
+            android:clipToPadding="false" />
+
+        <TextView android:id="@+id/widget_empty"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center" android:gravity="center" android:padding="12dp"
+            android:text="@string/w_empty"
+            android:textColor="@color/widget_text_secondary" android:textSize="11sp" />
+    </FrameLayout>
+</LinearLayout>
